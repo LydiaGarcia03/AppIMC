@@ -47,22 +47,22 @@ public class IMCRelativeLayout extends AppCompatActivity {
 
        if(imc < 17){
            estado = "Muito Abaixo";
-           img.setImageURI(R.drawable.abaixopeso);
+           img.setImageDrawable(getResources().getDrawable(R.drawable.sobrepeso));
        } else if(imc >= 17 && imc <= 18.49){
            estado = "Abaixo";
-           img.setImageURI(R.drawable.abaixopeso);
+           img.setImageDrawable(getResources().getDrawable(R.drawable.abaixopeso));
        } else if(imc >= 18.5 && imc <= 24.99){
            estado = "Normal";
-           img.setImageURI(R.drawable.normal);
+           img.setImageDrawable(getResources().getDrawable(R.drawable.normal));
        } else if(imc >= 25 && imc <= 29.99){
            estado = "Obesidade I";
-           img.setImageURI(R.drawable.obesidade1);
+           img.setImageDrawable(getResources().getDrawable(R.drawable.obesidade1));
        } else if(imc >= 35 && imc < 39.99){
            estado = "Obesidade II";
-           img.setImageURI(R.drawable.obesidade2);
+           img.setImageDrawable(getResources().getDrawable(R.drawable.obesidade2));
        } else{
            estado = "Obesidade III";
-           img.setImageURI(R.drawable.obesidade3);
+           img.setImageDrawable(getResources().getDrawable(R.drawable.obesidade3));
        }
 
     }
