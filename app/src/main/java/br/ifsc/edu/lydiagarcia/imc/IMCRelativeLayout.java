@@ -31,10 +31,10 @@ public class IMCRelativeLayout extends AppCompatActivity {
         });
     }
 
-    public void calcularIMC(){
+    public void calcularIMC(View view){
 
-        double peso = Integer.parseInt((findViewById(R.id.editPeso)).toString());
-        double altura = Integer.parseInt((findViewById(R.id.editAltura)).toString());
+        double peso = Double.parseDouble((findViewById(R.id.editPeso)).toString());
+        double altura = Double.parseDouble((findViewById(R.id.editAltura)).toString());
 
         double imc = peso / Math.pow(altura, 2);
 

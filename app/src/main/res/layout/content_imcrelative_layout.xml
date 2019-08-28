@@ -12,35 +12,31 @@
         android:id="@+id/editPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginBottom="252dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="Peso"
-        app:layout_constraintBottom_toTopOf="@+id/img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/txtAltura"
+        app:layout_constraintStart_toStartOf="@+id/txtPeso"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
 
     <EditText
         android:id="@+id/editAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="Altura"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/btnCalc"
-        app:layout_constraintStart_toStartOf="@+id/editPeso"
-        app:layout_constraintTop_toBottomOf="@+id/editPeso" />
+        app:layout_constraintStart_toStartOf="@+id/txtAltura"
+        app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
 
     <Button
         android:id="@+id/btnCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="47dp"
+        android:onClick="calcularIMC"
         android:text="Calcular"
-        app:layout_constraintBottom_toTopOf="@+id/imc"
+        app:layout_constraintBottom_toTopOf="@+id/txtIMC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editAltura" />
@@ -48,34 +44,55 @@
     <TextView
         android:id="@+id/txtIMC"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="22dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="14dp"
         android:text="IMC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imc"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/imc"
+        app:layout_constraintEnd_toEndOf="@+id/imc"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalc" />
 
     <TextView
         android:id="@+id/imc"
         android:layout_width="69dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="272dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalc" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIMC" />
 
     <ImageView
         android:id="@+id/img"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="52dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPeso"
+        app:layout_constraintTop_toBottomOf="@+id/imc"
         app:srcCompat="@drawable/perfil" />
+
+    <TextView
+        android:id="@+id/txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="33dp"
+        android:text="Peso(kg)"
+        app:layout_constraintBottom_toTopOf="@+id/editPeso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altura(m)"
+        app:layout_constraintBottom_toTopOf="@+id/editAltura"
+        app:layout_constraintStart_toStartOf="@+id/editPeso"
+        app:layout_constraintTop_toBottomOf="@+id/editPeso" />
 
 </android.support.constraint.ConstraintLayout>
