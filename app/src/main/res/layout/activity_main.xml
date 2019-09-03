@@ -6,14 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnRedirect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="331dp"
-        android:text="Redirect"
-        android:onClick="redirecionar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtAltura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Altura(m)"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/editAltura"
+                app:layout_constraintStart_toStartOf="@+id/editPeso"
+                app:layout_constraintTop_toBottomOf="@+id/editPeso" />
+
+            <EditText
+                android:id="@+id/editAltura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnCalc"
+                app:layout_constraintStart_toStartOf="@+id/txtAltura"
+                app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
+
+            <TextView
+                android:id="@+id/txtPeso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:text="Peso(kg)"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/editPeso"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editPeso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/txtAltura"
+                app:layout_constraintStart_toStartOf="@+id/txtPeso"
+                app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
+
+            <Button
+                android:id="@+id/btnCalc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="47dp"
+                android:layout_marginLeft="160dp"
+                android:onClick="calcularIMC"
+                android:text="Calcular"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/txtIMC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editAltura" />
+
+            <TextView
+                android:id="@+id/txtIMC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="21dp"
+                android:layout_marginBottom="14dp"
+                android:text="IMC"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/imcEstado"
+                app:layout_constraintEnd_toEndOf="@+id/imcEstado"
+                app:layout_constraintTop_toBottomOf="@+id/btnCalc" />
+
+            <TextView
+                android:id="@+id/imcEstado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="32dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtIMC" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="144dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="58dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imcEstado"
+                app:srcCompat="@drawable/perfil" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
